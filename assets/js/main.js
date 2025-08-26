@@ -316,9 +316,12 @@ const particleConfigs = {
             },
             modes: {
                 repulse: { 
-                    distance: 150, 
-                    duration: 0.4,
-                    speed: 1
+                    distance: 200, 
+                    duration: 1.2,
+                    speed: 0.5,
+                    factor: 100,
+                    easing: 'ease-out-quad',
+                    maxSpeed: 50
                 },
                 push: { particles_nb: 10 }
             }
