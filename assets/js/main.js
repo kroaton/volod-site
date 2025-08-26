@@ -3,10 +3,10 @@ if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 80,
+                value: 40,
                 density: {
                     enable: true,
-                    value_area: 800
+                    value_area: 1200
                 }
             },
             color: {
