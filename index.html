@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vladimir Cazacu | Technical Artist and Game Developer</title>
     <meta name="description" content="Portfolio of Vladimir Cazacu, Technical Artist and Game Developer">
+    <link rel="canonical" href="https://volod.xyz/">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://volod.xyz/">
+    <meta property="og:title" content="Vladimir Cazacu | Technical Artist and Game Developer">
+    <meta property="og:description" content="Portfolio of Vladimir Cazacu, Technical Artist and Game Developer">
+    <meta property="og:image" content="https://volod.xyz/assets/files/photo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://volod.xyz/">
+    <meta property="twitter:title" content="Vladimir Cazacu | Technical Artist and Game Developer">
+    <meta property="twitter:description" content="Portfolio of Vladimir Cazacu, Technical Artist and Game Developer">
+    <meta property="twitter:image" content="https://volod.xyz/assets/files/photo.jpg">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -12,14 +28,18 @@
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html" class="nav-brand">Vladimir Cazacu</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="posts.html">Posts</a></li>
             </ul>
@@ -27,19 +47,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <div id="particles-js"></div>
-        <div class="hero-content">
-            <img src="assets/files/photo.jpg" alt="Vladimir Cazacu" class="profile-photo">
-            <h1 class="hero-title">Vladimir Cazacu</h1>
-            <h2 class="hero-subtitle">Technical Artist and Game Developer</h2>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/volodXYZ" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://twitter.com/volodXYZ" target="_blank" rel="noopener">Twitter/X</a>
-                <a href="mailto:vladimir@volod.xyz">Email</a>
+    <main id="main-content">
+        <div class="hero">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <img src="assets/files/photo.jpg" alt="Vladimir Cazacu" class="profile-photo" width="150" height="150" loading="eager">
+                <h1 class="hero-title">Vladimir Cazacu</h1>
+                <h2 class="hero-subtitle">Technical Artist and Game Developer</h2>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/volodXYZ" target="_blank" rel="noopener" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://twitter.com/volodXYZ" target="_blank" rel="noopener" aria-label="Twitter Profile">Twitter/X</a>
+                    <a href="mailto:vladimir@volod.xyz" aria-label="Email Vladimir Cazacu">Email</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- About Section -->
     <section class="about">
@@ -57,7 +79,7 @@
     </footer>
 
     <!-- Particles.js -->
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
