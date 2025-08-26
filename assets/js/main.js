@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     random: true 
                 },
                 size: { 
-                    value: 2, 
+                    value: 2.8, 
                     random: true 
                 },
                 line_linked: { 
