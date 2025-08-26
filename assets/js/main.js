@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } 
                 },
                 color: { 
-                    value: '#ffffff' 
+                    value: '#9333ea' 
                 },
                 shape: { 
                     type: 'circle' 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 line_linked: { 
                     enable: !isMobile, // Disable lines on mobile for performance
                     distance: 100, 
-                    color: '#ffffff', 
+                    color: '#9333ea', 
                     opacity: 0.2, 
                     width: 1 
                 },

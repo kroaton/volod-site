@@ -1,0 +1,126 @@
+/* Typography System - Space Grotesk */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Typography Variables */
+:root {
+    --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: -0.01em;
+    --line-height-tight: 1.4;
+    --line-height-normal: 1.6;
+}
+
+/* Base Typography */
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-light);
+    letter-spacing: var(--letter-spacing-normal);
+    line-height: var(--line-height-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, .hero-title {
+    font-weight: var(--font-weight-light);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+}
+
+h2, .hero-subtitle {
+    font-weight: 300;
+    letter-spacing: var(--letter-spacing-normal);
+    line-height: var(--line-height-tight);
+}
+
+h3 {
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Navigation */
+.nav-brand {
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.nav-menu a {
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.01em;
+}
+
+/* Buttons and Links */
+.social-links a,
+.btn-download {
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* CV Typography */
+.cv-header h1 {
+    font-weight: var(--font-weight-light);
+    letter-spacing: -0.01em;
+}
+
+.cv-title {
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.cv-section h2 {
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.cv-entry h3 {
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0;
+}
+
+.cv-meta {
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.01em;
+}
+
+/* Posts Typography */
+.post-title {
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.01em;
+}
+
+.post-date {
+    font-weight: var(--font-weight-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+}
+
+.post-excerpt {
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0;
+}
+
+/* About Section */
+.about h2 {
+    font-weight: var(--font-weight-regular);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 1.25rem;
+}
+
+.about p {
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.01em;
+    line-height: 1.8;
+}
