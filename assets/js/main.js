@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
         // Adjust particle count based on device
-        const particleCount = isMobile ? 80 : 160;
+        const particleCount = isMobile ? 65 : 160;
         
         particlesJS('particles-js', {
             particles: {
