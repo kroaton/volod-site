@@ -3,7 +3,7 @@ if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 300,
+                value: 60,
                 density: {
                     enable: true,
                     value_area: 1200
