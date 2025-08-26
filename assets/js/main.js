@@ -277,36 +277,50 @@ const particleConfigs = {
         retina_detect: true
     },
     
-    // 9 - Vortex
+    // 9 - Strong Vortex + Repulsion
     '9': {
         particles: {
-            number: { value: 200, density: { enable: true, value_area: 800 } },
+            number: { value: 250, density: { enable: true, value_area: 800 } },
             color: { value: '#ffffff' },
             shape: { type: 'circle' },
-            opacity: { value: 0.5, random: true },
+            opacity: { value: 0.7, random: true },
             size: { value: 2, random: true },
-            line_linked: { enable: false },
+            line_linked: { 
+                enable: true, 
+                distance: 100, 
+                color: '#ffffff', 
+                opacity: 0.2, 
+                width: 1 
+            },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 4,
                 direction: 'none',
                 random: false,
                 straight: false,
-                out_mode: 'out',
+                out_mode: 'bounce',
                 bounce: false,
-                attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                attract: { 
+                    enable: true, 
+                    rotateX: 3000, 
+                    rotateY: 3000 
+                }
             }
         },
         interactivity: {
             detect_on: 'canvas',
             events: {
-                onhover: { enable: true, mode: 'grab' },
+                onhover: { enable: true, mode: 'repulse' },
                 onclick: { enable: true, mode: 'push' },
                 resize: true
             },
             modes: {
-                grab: { distance: 140, line_linked: { opacity: 1 } },
-                push: { particles_nb: 4 }
+                repulse: { 
+                    distance: 150, 
+                    duration: 0.4,
+                    speed: 1
+                },
+                push: { particles_nb: 10 }
             }
         },
         retina_detect: true
@@ -395,7 +409,7 @@ if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined
                 '6': 'Bubble Mode',
                 '7': 'Fireworks (click for explosions)',
                 '8': 'Slow Float',
-                '9': 'Vortex',
+                '9': 'Strong Vortex + Repulsion',
                 '0': 'Original'
             };
             
