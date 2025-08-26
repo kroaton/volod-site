@@ -83,26 +83,28 @@ body {
 }
 
 #particles-js {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#particles-js canvas {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
-    pointer-events: all;
+    z-index: 0;
 }
 
 .hero-content {
     text-align: center;
-    z-index: 2;
     position: relative;
+    z-index: 10;
     padding: 2rem;
-    pointer-events: none;
-}
-
-.hero-content img,
-.hero-content a {
-    pointer-events: all;
 }
 
 .profile-photo {
