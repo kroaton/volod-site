@@ -1,76 +1,49 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Project instructions for Claude Code (claude.ai/code) when working with this repository.
 
-## Project Overview
+## Overview
 
-This is a simple static HTML/CSS/JS portfolio website hosted at https://volod.xyz showcasing Vladimir Cazacu's professional profile as a Lead Technical Artist.
+Static portfolio website for Vladimir Cazacu (Technical Artist/Game Developer) at https://volod.xyz
 
-## Architecture & Structure
+## Structure
 
-Pure static site with no build process required:
+```
+├── index.html          # Homepage with particles
+├── cv.html            # Resume page
+├── posts.html         # Blog listing
+├── 404.html          # Error page
+├── robots.txt        # AI crawler blocking
+└── assets/
+    ├── css/
+    │   ├── themes.css      # Midnight Purple theme
+    │   └── typography.css  # Space Grotesk font
+    ├── js/
+    │   ├── main.js         # Particles: 160 desktop/65 mobile
+    │   └── particles.min.js
+    └── files/
+        └── photo.jpg       # Profile photo (28KB)
+```
 
-- **HTML Pages**: 
-  - `index.html` - Homepage with hero section and particles effect
-  - `cv.html` - CV/resume page
-  - `posts.html` - Blog posts listing
-  - `404.html` - Error page
+## Design System
 
-- **Assets** (`assets/` directory):
-  - `css/style.min.css` - Minified CSS (dark theme)
-  - `js/main.js` - Particles config (160 desktop/50 mobile)
-  - `js/particles.min.js` - Particles library
-  - `files/photo.jpg` - Profile photo (28KB)
+- **Theme**: Midnight Purple (#240e45 → #0f0825 gradient)
+- **Accent**: #9333ea (purple particles/borders)
+- **Typography**: Space Grotesk (300-600 weights)
+- **Particles**: Purple with lines, vortex effect enabled on all devices
 
-## Key Features
-
-- **Dark Mode**: Slate backgrounds (#0f172a), blue accents (#60a5fa)
-- **Particles**: Vortex effect with mouse repulsion, mobile-optimized
-- **Performance**: Scripts deferred, mobile detection, reduced particles
-- **Security**: CSP headers via `_headers` file for GitHub Pages
-- **Accessibility**: Skip links, ARIA labels, semantic HTML
-
-## Local Development
-
-Simply open `index.html` in a web browser or use any static server:
+## Development
 
 ```bash
-# Python
+# Local server
 python -m http.server 8000
 
-# Node.js
-npx http-server
-
-# Or just open index.html directly
+# Deploy: Auto via GitHub Pages on push to master
 ```
 
-## Deployment
+## Key Points
 
-The site is configured for GitHub Pages deployment with custom domain volod.xyz (CNAME file present). Any changes pushed to the repository are automatically deployed.
-
-## Optimization Checklist
-
-```bash
-# Check asset sizes
-ls -lh assets/**/*
-
-# Test performance
-# - Should score 90+ on Lighthouse
-# - Particles: 160 desktop, 50 mobile
-# - Images: width/height attributes set
-# - Scripts: defer attribute
-
-# Security headers (_headers file):
-# - CSP, X-Frame-Options, cache control
-# - Assets cached 1 year, HTML 1 hour
-```
-
-## Quick Commands
-
-```bash
-# Minify CSS after changes
-cat assets/css/style.css | tr -d '\n' | sed 's/  */ /g' > assets/css/style.min.css
-
-# Test locally
-python -m http.server 8000
-```
+- No build process - pure HTML/CSS/JS
+- Mobile optimized (65 particles, 150px line distance)
+- AI crawlers blocked via robots.txt
+- Social links: x.com/volodXYZ, linkedin.com/in/volodXYZ/
