@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
         // Adjust particle count based on device
-        const particleCount = isMobile ? 50 : 160;
+        const particleCount = isMobile ? 80 : 160;
         
         particlesJS('particles-js', {
             particles: {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 line_linked: { 
                     enable: true, // Modern mobiles can handle this
-                    distance: 100, 
+                    distance: isMobile ? 150 : 100, // Increased distance on mobile for better connections
                     color: '#9333ea', 
                     opacity: 0.2, 
                     width: 1 
