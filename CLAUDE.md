@@ -17,11 +17,18 @@ Pure static site with no build process required:
   - `404.html` - Error page
 
 - **Assets** (`assets/` directory):
-  - `css/style.css` - All styling
-  - `js/main.js` - Particles configuration
+  - `css/style.min.css` - Minified CSS (dark theme)
+  - `js/main.js` - Particles config (160 desktop/50 mobile)
   - `js/particles.min.js` - Particles library
-  - `files/photo.jpg` - Profile photo
-  - `files/cv.pdf` - Downloadable CV
+  - `files/photo.jpg` - Profile photo (28KB)
+
+## Key Features
+
+- **Dark Mode**: Slate backgrounds (#0f172a), blue accents (#60a5fa)
+- **Particles**: Vortex effect with mouse repulsion, mobile-optimized
+- **Performance**: Scripts deferred, mobile detection, reduced particles
+- **Security**: CSP headers via `_headers` file for GitHub Pages
+- **Accessibility**: Skip links, ARIA labels, semantic HTML
 
 ## Local Development
 
@@ -40,3 +47,30 @@ npx http-server
 ## Deployment
 
 The site is configured for GitHub Pages deployment with custom domain volod.xyz (CNAME file present). Any changes pushed to the repository are automatically deployed.
+
+## Optimization Checklist
+
+```bash
+# Check asset sizes
+ls -lh assets/**/*
+
+# Test performance
+# - Should score 90+ on Lighthouse
+# - Particles: 160 desktop, 50 mobile
+# - Images: width/height attributes set
+# - Scripts: defer attribute
+
+# Security headers (_headers file):
+# - CSP, X-Frame-Options, cache control
+# - Assets cached 1 year, HTML 1 hour
+```
+
+## Quick Commands
+
+```bash
+# Minify CSS after changes
+cat assets/css/style.css | tr -d '\n' | sed 's/  */ /g' > assets/css/style.min.css
+
+# Test locally
+python -m http.server 8000
+```
