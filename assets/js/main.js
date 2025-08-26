@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     random: true 
                 },
                 line_linked: { 
-                    enable: !isMobile, // Disable lines on mobile for performance
+                    enable: true, // Modern mobiles can handle this
                     distance: 100, 
                     color: '#9333ea', 
                     opacity: 0.2, 
@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     out_mode: 'bounce',
                     bounce: false,
                     attract: { 
-                        enable: !isMobile, // Disable vortex on mobile
-                        rotateX: 3000, 
-                        rotateY: 3000 
+                        enable: true, // Enable for richer visuals
+                        rotateX: isMobile ? 2000 : 3000, // Slightly less intense on mobile
+                        rotateY: isMobile ? 2000 : 3000 
                     }
                 }
             },

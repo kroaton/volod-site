@@ -1,0 +1,118 @@
+# Robots.txt for volod.xyz
+# Block AI crawlers and data scrapers
+
+# OpenAI GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# ChatGPT Plugin
+User-agent: ChatGPT-User
+Disallow: /
+
+# Common Crawl (used by many AI companies)
+User-agent: CCBot
+Disallow: /
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Disallow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Facebook/Meta AI
+User-agent: FacebookBot
+Disallow: /
+
+# Bytedance (TikTok parent)
+User-agent: Bytespider
+Disallow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Disallow: /
+
+# Apple AI Training
+User-agent: Applebot-Extended
+Disallow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Disallow: /
+
+# Diffbot
+User-agent: Diffbot
+Disallow: /
+
+# SemrushBot
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+# DataForSEO
+User-agent: DataForSeoBot
+Disallow: /
+
+# AhrefsBot
+User-agent: AhrefsBot
+Disallow: /
+
+# Various AI/ML crawlers
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# PetalBot (Huawei)
+User-agent: PetalBot
+Disallow: /
+
+# YouBot
+User-agent: YouBot
+Disallow: /
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: TwitterBot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Default for all other bots
+User-agent: *
+Allow: /
+
+# Sitemap location (if you add one later)
+# Sitemap: https://volod.xyz/sitemap.xml
