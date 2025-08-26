@@ -89,6 +89,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+    pointer-events: all;
 }
 
 .hero-content {
@@ -96,6 +97,12 @@ body {
     z-index: 2;
     position: relative;
     padding: 2rem;
+    pointer-events: none;
+}
+
+.hero-content img,
+.hero-content a {
+    pointer-events: all;
 }
 
 .profile-photo {
