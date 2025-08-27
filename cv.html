@@ -13,6 +13,297 @@
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    
+    <style>
+        /* CV Test Page Specific Styles */
+        .cv-modern {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 40px 60px;
+        }
+        
+        /* Header */
+        .cv-modern-header {
+            margin-bottom: 80px;
+        }
+        
+        .cv-modern-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+        }
+        
+        .cv-modern-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 300;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .cv-modern-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 650px;
+            font-weight: 300;
+        }
+        
+        /* Section Headers */
+        .cv-section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .cv-section-header:first-of-type {
+            margin-top: 0;
+        }
+        
+        .cv-section-number {
+            color: var(--accent-primary);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-right: 1rem;
+            font-family: 'Space Grotesk', monospace;
+        }
+        
+        .cv-section-title {
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            flex: 1;
+        }
+        
+        .cv-section-line {
+            height: 1px;
+            background: var(--border-color);
+            flex: 1;
+            margin-left: 2rem;
+            max-width: 300px;
+        }
+        
+        /* Experience Timeline */
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+        
+        .experience-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding-top: 0.25rem;
+        }
+        
+        .experience-content h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .experience-content h3 span {
+            color: var(--accent-primary);
+        }
+        
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .experience-description ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .experience-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .experience-description li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+        
+        .project-card h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .project-tech {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category h4 {
+            color: var(--accent-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        
+        .skill-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-size: 0.875rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 5rem;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+        
+        .contact-button:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-modern {
+                padding: 80px 20px 40px;
+            }
+            
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .experience-date {
+                margin-bottom: 0.5rem;
+            }
+            
+            .cv-section-line {
+                display: none;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -21,63 +312,264 @@
             <a href="index.html" class="nav-brand">Vladimir Cazacu</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="cv.html">CV</a></li>
                 <li><a href="posts.html">Posts</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- CV Content -->
-    <div class="container cv-container">
-        <header class="cv-header">
+    <!-- Modern CV Content -->
+    <div class="cv-modern">
+        <!-- Header Section -->
+        <header class="cv-modern-header">
             <h1>Vladimir Cazacu</h1>
-            <p class="cv-title">Technical Artist and Game Developer</p>
-            <div class="cv-contact">
-                <a href="mailto:vladimir@volod.xyz">vladimir@volod.xyz</a>
-                <span class="separator">•</span>
-                <a href="https://volod.xyz">volod.xyz</a>
-            </div>
+            <div class="cv-modern-subtitle">Senior Technical Artist</div>
+            <p class="cv-modern-intro">
+                Technical artist and 3D generalist with 8+ years of experience bridging creative vision and technical execution. Specializing in Unreal Engine consultancy, Houdini procedural workflows, and real-time VFX pipelines for games, film, and advertising.
+            </p>
         </header>
 
-        <section class="cv-section">
-            <h2>Experience</h2>
-            <div class="cv-entry">
-                <h3>Lead Technical Artist</h3>
-                <p class="cv-meta">Company Name • 2020 - Present</p>
-                <ul>
-                    <li>Leading technical art initiatives and pipeline development</li>
-                    <li>Creating tools and workflows for art teams</li>
-                    <li>Optimizing assets and shaders for real-time performance</li>
+        <!-- Experience Section -->
+        <div class="cv-section-header">
+            <span class="cv-section-number">01.</span>
+            <h2 class="cv-section-title">Experience</h2>
+            <div class="cv-section-line"></div>
+        </div>
+
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-date">
+                    Dec 2021 — Present
+                </div>
+                <div class="experience-content">
+                    <h3>Senior Technical Artist <span>@ <a href="https://amberstudio.com" target="_blank" rel="noopener" style="color: inherit;">Amber</a></span></h3>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Lead technical art initiatives across multiple projects including AAA and AA titles</li>
+                            <li>Developed pipelines and tools for PAC-MAN Mega Tunnel Battle: Chomp Champs</li>
+                            <li>Created procedural workflows and VFX systems for unannounced Web3 game</li>
+                            <li>Worked on immersive music experiences for Sony Immersive Music Studios (PartyNextDoor, Sleepy Hallow)</li>
+                            <li>Optimized rendering and performance across various platforms</li>
+                            <li>Mentored junior artists on technical best practices and workflows</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Unreal Engine</span>
+                        <span class="tech-tag">Houdini</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Niagara</span>
+                        <span class="tech-tag">Blueprints</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">
+                    Jan 2017 — Present
+                </div>
+                <div class="experience-content">
+                    <h3>3D Generalist | Technical Artist | Technical Director <span>@ Freelance</span></h3>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Prototyped ML chatbot with Epic Games' Metahuman for Soft Technica</li>
+                            <li>Implemented first realtime Unreal Engine film VFX pipeline in Romania for SafeFrame VFX</li>
+                            <li>Created large scale Houdini simulations (DOPs, Pyro, Vellum) for advertising clients</li>
+                            <li>Delivered VFX for Amazon's Wheel of Time, The Maid (2020), and other productions</li>
+                            <li>Worked with major brands including Nike, Rexona, and Colgate</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Houdini</span>
+                        <span class="tech-tag">Unreal Engine 4</span>
+                        <span class="tech-tag">Substance</span>
+                        <span class="tech-tag">VEX</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">
+                    Mar 2018 — Nov 2018
+                </div>
+                <div class="experience-content">
+                    <h3>Color Grading Artist <span>@ <a href="https://www.o-video.ro" target="_blank" rel="noopener" style="color: inherit;">O-Video Romania</a></span></h3>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Color graded Las Fierbinti season 13 (2018)</li>
+                            <li>Graded Here After (2020) - Sundance Nominee</li>
+                            <li>Completed color work for The Sentries (2018) and Pup-o, ma! (2018)</li>
+                            <li>Collaborated with directors to achieve specific visual aesthetics</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">DaVinci Resolve</span>
+                        <span class="tech-tag">Color Grading</span>
+                        <span class="tech-tag">Film Editing</span>
+                        <span class="tech-tag">Digital Compositing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">
+                    Jan 2017 — Mar 2018
+                </div>
+                <div class="experience-content">
+                    <h3>Jr. Color Grading Artist <span>@ <a href="https://www.kodak.com/en/motion/page/cinelabs" target="_blank" rel="noopener" style="color: inherit;">Kodak Cinelabs Romania</a></span></h3>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Provided DIT on-set services for advertising and film projects</li>
+                            <li>Operated Northlight digital 35MM film scanners</li>
+                            <li>Worked on High Strung Free Dance (2016) and Morometii 4K remaster</li>
+                            <li>Managed color pipeline from film scanning to final delivery</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Telecine</span>
+                        <span class="tech-tag">Film Development</span>
+                        <span class="tech-tag">Color Grading</span>
+                        <span class="tech-tag">DIT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="cv-section-header">
+            <span class="cv-section-number">02.</span>
+            <h2 class="cv-section-title">Featured Projects</h2>
+            <div class="cv-section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>PAC-MAN Mega Tunnel Battle</h4>
+                <p>Developed procedural level generation tools and optimized rendering pipelines for this multiplayer battle royale PAC-MAN game.</p>
+                <div class="project-tech">Unreal Engine • Blueprints • Python</div>
+            </div>
+
+            <div class="project-card">
+                <h4>MetaHuman ML Chatbot</h4>
+                <p>Prototyped machine learning chatbot integration with Epic Games' MetaHuman for realistic real-time character interactions.</p>
+                <div class="project-tech">Unreal Engine 5 • MetaHuman • Python</div>
+            </div>
+
+            <div class="project-card">
+                <h4>Wheel of Time VFX</h4>
+                <p>Created large-scale particle simulations and procedural effects for Amazon Prime's fantasy series using Houdini.</p>
+                <div class="project-tech">Houdini • VEX • Pyro • Vellum</div>
+            </div>
+
+            <div class="project-card">
+                <h4>Real-time Film Pipeline</h4>
+                <p>Implemented Romania's first real-time Unreal Engine VFX pipeline for film production at SafeFrame VFX.</p>
+                <div class="project-tech">Unreal Engine • Virtual Production</div>
+            </div>
+
+            <div class="project-card">
+                <h4>Procedural Asset Tools</h4>
+                <p>Built Houdini-based procedural generation and modeling tools for AAA game production workflows.</p>
+                <div class="project-tech">Houdini • VEX • Python</div>
+            </div>
+
+            <div class="project-card">
+                <h4>Here After (Sundance)</h4>
+                <p>Lead color grading artist for this Sundance-nominated film, establishing the visual tone and atmosphere.</p>
+                <div class="project-tech">DaVinci Resolve • Color Science</div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="cv-section-header">
+            <span class="cv-section-number">03.</span>
+            <h2 class="cv-section-title">Technical Skills</h2>
+            <div class="cv-section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Software & Tools</h4>
+                <ul class="skill-list">
+                    <li>Unreal Engine 4/5</li>
+                    <li>Houdini</li>
+                    <li>Substance Designer/Painter</li>
+                    <li>Blender</li>
+                    <li>3D Coat</li>
+                    <li>Quixel Mixer</li>
+                    <li>SpeedTree</li>
+                    <li>Marmoset Toolbag</li>
                 </ul>
             </div>
-        </section>
 
-        <section class="cv-section">
-            <h2>Skills</h2>
-            <div class="cv-skills">
-                <div class="skill-category">
-                    <h3>Technical</h3>
-                    <p>Python, C#, HLSL/GLSL, MEL/MAXScript</p>
+            <div class="skill-category">
+                <h4>Programming & Scripting</h4>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>HLSL</li>
+                    <li>VEX</li>
+                    <li>Blueprints Visual Scripting</li>
+                    <li>OOP</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h4>Technical Specializations</h4>
+                <ul class="skill-list">
+                    <li>Procedural Animation</li>
+                    <li>Shader Creation</li>
+                    <li>Real-time Rendering</li>
+                    <li>Particle Simulations</li>
+                    <li>Custom Tool Development</li>
+                    <li>Rendering Optimizations</li>
+                    <li>Niagara VFX</li>
+                    <li>UV Mapping & Texturing</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h4>Film & Post-Production</h4>
+                <ul class="skill-list">
+                    <li>Color Grading</li>
+                    <li>DaVinci Resolve</li>
+                    <li>Digital Compositing</li>
+                    <li>Film Editing</li>
+                    <li>Telecine Operations</li>
+                    <li>DIT Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="cv-section-header">
+            <span class="cv-section-number">04.</span>
+            <h2 class="cv-section-title">Education</h2>
+            <div class="cv-section-line"></div>
+        </div>
+
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-date">
+                    Oct 2015 — Jun 2018
                 </div>
-                <div class="skill-category">
-                    <h3>Software</h3>
-                    <p>Maya, 3ds Max, Houdini, Substance, Unreal Engine, Unity</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Specializations</h3>
-                    <p>Pipeline Development, Shader Writing, Performance Optimization, Procedural Generation</p>
+                <div class="experience-content">
+                    <h3>Bachelor's Degree <span>@ UNATC "I.L. Caragiale" Bucharest</span></h3>
+                    <div class="experience-description">
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">Sound Engineering and Film Editing</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">University of Theatre and Film Arts, Bucharest</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="cv-section">
-            <h2>Education</h2>
-            <div class="cv-entry">
-                <h3>Degree in Computer Graphics</h3>
-                <p class="cv-meta">University Name • Year</p>
-            </div>
-        </section>
-
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>I'm always interested in hearing about new opportunities and exciting projects.</p>
+            <a href="mailto:vladimir@volod.xyz" class="contact-button">Say Hello</a>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -86,6 +578,5 @@
             <p>&copy; 2024 Vladimir Cazacu. All rights reserved.</p>
         </div>
     </footer>
-    
 </body>
 </html>
