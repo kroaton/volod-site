@@ -37,7 +37,12 @@
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html" class="nav-brand">Vladimir Cazacu</a>
-            <ul class="nav-menu">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="posts.html">Posts</a></li>
@@ -63,10 +68,77 @@
     </main>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
-            <h2>About</h2>
-            <p>Technical Artist and Game Developer with expertise in bridging the gap between art and technology. Specializing in pipeline development, tool creation, and optimization for real-time applications.</p>
+            <h2 class="section-title">About</h2>
+            <p class="about-text">Technical Artist and Game Developer with expertise in bridging the gap between art and technology. Specializing in pipeline development, tool creation, and optimization for real-time applications.</p>
+        </div>
+    </section>
+
+    <!-- Skills Bento Grid -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="bento-grid">
+                <!-- Large featured card -->
+                <div class="bento-card bento-large" data-tilt>
+                    <div class="card-icon">🎮</div>
+                    <h3>Game Development</h3>
+                    <p>Unity, Unreal Engine, C#, C++</p>
+                    <div class="skill-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Unreal</span>
+                        <span class="tag">Gameplay</span>
+                    </div>
+                </div>
+                
+                <!-- Medium cards -->
+                <div class="bento-card bento-medium" data-tilt>
+                    <div class="card-icon">🎨</div>
+                    <h3>3D Art Pipeline</h3>
+                    <p>Maya, Blender, Substance, ZBrush</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="--progress: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="bento-card bento-medium" data-tilt>
+                    <div class="card-icon">⚡</div>
+                    <h3>Shader Development</h3>
+                    <p>HLSL, GLSL, ShaderGraph, Amplify</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="--progress: 85%"></div>
+                    </div>
+                </div>
+                
+                <!-- Small cards -->
+                <div class="bento-card bento-small" data-tilt>
+                    <div class="card-icon">🔧</div>
+                    <h3>Tools</h3>
+                    <p>Python, MEL, MaxScript</p>
+                </div>
+                
+                <div class="bento-card bento-small" data-tilt>
+                    <div class="card-icon">🚀</div>
+                    <h3>Performance</h3>
+                    <p>Optimization & Profiling</p>
+                </div>
+                
+                <div class="bento-card bento-small" data-tilt>
+                    <div class="card-icon">💡</div>
+                    <h3>Lighting</h3>
+                    <p>Real-time & Baked</p>
+                </div>
+                
+                <!-- Status card -->
+                <div class="bento-card bento-status" data-tilt>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Available for Projects</span>
+                    </div>
+                    <p class="status-detail">Open to freelance and full-time opportunities</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -80,5 +152,21 @@
     <!-- Particles.js -->
     <script src="assets/js/particles.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    
+    <!-- Vanilla Tilt for 3D card effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+                max: 15,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.3,
+                gyroscope: true
+            });
+        });
+    </script>
 </body>
 </html>
+
+
